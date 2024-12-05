@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <ul id="fruits">
+    <li class="fr apple">사과</li>
+    <li class="fr banana">바나나</li>
+    <li class="fr grape">포도</li>
+  </ul>
+
+  <div class="box">
+    <p></p>
+  </div>
+
+  <script>
+    const $ul = document.getElementById('fruits');
+
+    const $listItems = [...$ul.children];  //배열로 변환
+    console.log($listItems);
+
+    const $first = $ul.firstElementChild;  //첫번째 태그에 스타일 적용
+    $first.style.fontSize = '2em';
+
+    const $last = $ul.lastElementChild;  //마지막 태그에 스타일 적용
+    $last.style.color = 'violet';
+
+    // 특정 태그에 자식이 있는지 여부 확인
+    const $box = document.querySelector('.box');
+    console.log(hasChild($box));
+    
+    function hasChild($tag) {
+      return !!$tag.children.length;  //0=falsy, 0이 아닐땐 true 
+      //0일때, 느낌표 하나만 붙이면 0을 논리로 변환(false), 두번째 느낌표는 원래대로 복구(논리->숫자)
+      //느낌표는 true를 falsy로 flasy를 true로 변환 숫자는 뒤집을 수가 없으니 논리로 변환
+    }
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+

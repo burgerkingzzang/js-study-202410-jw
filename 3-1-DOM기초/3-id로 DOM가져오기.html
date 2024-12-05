@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li id="apple">사과</li>
+    <li id="banana">바나나</li>
+    <li id="grape">포도</li>
+    <li id="peach">복숭아</li>
+  </ul>
+
+  <script>
+    const $banana = document.getElementById('banana');  //태그가 달려있는 변수는 앞에 $사용시 구분이 쉬움
+    console.log($banana.textContent);  //console에 출력 
+    
+    $banana.textContent = '뻐네너';  //바나나 -> 뻐네너로 텍스트 수정
+    $banana.apple ='사과'  //객체 추가
+    delete $banana.apple;  //객체 삭제
+
+    const $peach =document.getElementById('peach');  
+    $peach.style.fontSize ='2em';;  //css와는 달리 font-size가 아니라 js에 맞게 camel case로 fontSize로 입력
+    $peach.style['font-weight'] = '700';  //대괄호[]사용시 대쉬- 사용가능
+    $peach.style.backgroundColor ='red';  //
+
+    const $grape = document.getElementById('grape');
+    $grape.style.background ='violet';
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

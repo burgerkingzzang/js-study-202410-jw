@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="fruits">
+    <li>사과</li>
+    <li>바나나</li>
+    <li>포도</li>
+  </ul>
+
+  <script>
+    const $fruits = document.getElementById('fruits');
+    const [$apple , $banana, $grape] = [... $fruits.children];  //배열로 변환후 각각의 변수에 삽입
+
+    // 첫번째 li input태그로 교체
+    const $newInput = document.createElement('input');
+    $newInput.value =$apple.textContent;
+ 
+    //replaceChild(new , old):
+    $fruits.replaceChild($newInput,$apple);  //부모.자식 으로 입력
+
+    /*노드 삭제
+    $parent.removeChild($target) - 부모에게 자식지우라고 명령
+    $target.remove() - 바로 지목해서 삭제*/
+
+    $fruits.removeChild($banana);  //바나나 삭제명령
+    //or $grape.remove();
+    // $fruits.innerHtml = '';  -  전체 삭제
+  </script>
+</body>
+</html>

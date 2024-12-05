@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrapper">
+    <section class="contents">
+      <ul class="list">
+        <li class="item"><a href="#" class="link">10</a></li>
+        <li class="item"><a href="#" class="link active">20</a></li>
+        <li class="item"><a href="#" class="link">30</a></li>
+      </ul>
+      <ul class="list">
+        <li class="item"><a href="#" class="link">40</a></li>
+        <li class="item"><a href="#" class="link">50</a></li>
+        <li class="item"><a href="#" class="link">60</a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="wrap">
+    <ul id="fruits">
+      <li class="fr apple">사과</li>
+      <li class="fr banana">바나나</li>
+      <li class="fr grape">포도</li>
+    </ul>
+  </div>
+
+  <script>
+    const $ul = document.getElementById('fruits');
+
+   const $wrap = $ul.parentElement;
+   $wrap.style.background ='orange';
+
+   $ul.parentElement.parentElement.style.background ='greenyellow';  //body : ul의 부모의 부모는 body 태그 
+   
+   const [$apple , $banana , $grape] = [...$ul.children];  //배열을 디스트럭쳐링
+    console.log($banana.nextElementSibling ===$grape);  //바나나의 다음형제와 포도가 같냐 > true
+    console.log($ul.children[0] === $apple);  //ul의 0번인덱스와 사과가 같냐 > true
+    
+
+    // active 부터 60까지 탐색
+    const $active = document.querySelector('.active');  //active 찾아오고 탐색
+    // console.log($active.parentElement.parentElement.nextElementSibling.lastElementChild.firstElementChild);
+    
+    // 한번에 윗쪽 방향(자식 -> 부모) 으로 탐색하는 함수, 복잡할땐 이 방법 사용하는게 더 좋음
+    // closest(css selector)
+    const $target = $active.closest('.contents');
+    //한번에 아래 방향(부모 -> 자식) 으로 타맥하는 함수
+    const $tg = $target.querySelector('ul:last-child li:last-child')
+    console.log($tg.textContent);  //60 출력    
+    //둘을 합쳐서 사용시
+    const $tg = $active
+      .closest('.contents')
+      .querySelector('ul:last-child li:last-chile');
+  </script>
+</body>
+</html>

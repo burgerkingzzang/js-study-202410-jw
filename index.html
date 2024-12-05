@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이더</title>
+  
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f5f5f5;
+      }
+  
+      #slider {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+  
+      #slider img {
+        max-width: 400px;
+        max-height: 300px;
+        display: block;
+        object-fit: cover;
+      }
+  
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      button:hover {
+        background-color: #0056b3;
+      }
+  
+      button:focus {
+        outline: none;
+      }
+  
+      #thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+  
+      .thumbnail {
+        width: 100px;
+        height: 75px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        border-radius: 5px;
+      }
+  
+      .thumbnail:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="slider">
+      <button id="prev">이전</button>
+      <img id="image" src="<https://blog.kakaocdn.net/dn/dN4uhe/btr8xWDwbrK/5YjBrelhtJwU2BAcLtEVoK/img.jpg>" style="width: 400px; height: auto;">
+      <button id="next">다음</button>
+    </div>
+  
+    <!-- 모든 이미지의 썸네일을 슬라이더 하단에 배치 -->
+    <div id="thumbnails"></div>
+  
+    <script>
+      // 이미지 경로 배열 생성
+      const images = [
+        '<https://blog.kakaocdn.net/dn/dN4uhe/btr8xWDwbrK/5YjBrelhtJwU2BAcLtEVoK/img.jpg>',
+        "<https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86985/86985214621_1024.png>",
+        "<https://www.sisajournal.com/news/photo/202108/222572_131065_5150.jpg>",
+        '<https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D>'
+      ];
+  
+      // 썸네일 이미지 생성 및 배치
+      const $thumbnailContainer = document.getElementById('thumbnails');
+      images.forEach((imgSrc, i) => {
+        const $img = document.createElement('img');
+        $img.setAttribute('src', imgSrc);
+        $img.setAttribute('alt', `image${i+1}`);
+        $img.classList.add('thumbnail');
+        $img.dataset.index = i;
+        $thumbnailContainer.appendChild($img);
+      });
+  
+      let currentIndex = 0;
+  
+      // 이전, 다음 버튼 및 슬라이더 이미지 요소 선택
+      const [$prev, $sliderImg, $next] = [...document.getElementById('slider').children];
+  
+      // 이미지 전환 함수
+      const updateImage = (index) => {
+        currentIndex = index;
+        $sliderImg.setAttribute('src', images[currentIndex]);
+      };
+  
+      // 다음 버튼 클릭 이벤트
+      $next.addEventListener('click', () => {
+        updateImage((currentIndex + 1) % images.length);
+      });
+  
+      // 이전 버튼 클릭 이벤트
+      $prev.addEventListener('click', () => {
+        updateImage((currentIndex - 1 + images.length) % images.length);
+      });
+  
+      // 썸네일 클릭 시 해당 이미지로 이동
+      $thumbnailContainer.addEventListener('click', e => {
+        if (e.target.classList.contains('thumbnail')) {
+          const clickedIndex = +e.target.dataset.index;
+          updateImage(clickedIndex);
+        }
+      });
+
+const element = document.querySelector('.my-element');
+const rect = element.getBoundingClientRect();
+console.log(rect.top, rect.left, rect.width, rect.height);
+//스크롤에 따른 위치 변화를 자동으로 계산해 주어, 요소의 위치와 크기를 파악할 때 유용
+
+const element = document.querySelector('.my-element');
+console.log(element.offsetWidth, element.offsetHeight);
+console.log(element.offsetTop, element.offsetLeft);
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+  </html>
+  
+</body>
+</html>

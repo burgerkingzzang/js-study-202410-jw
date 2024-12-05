@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>아무 곳이나 클릭하세요</p>
+  <em class="msg"></em>
+
+  <hr>
+
+  <input type="text" id="txt">
+  <p class="show"></p>
+
+  <script>
+    document.addEventListener('click', function(e) {  //문서 전체에 이벤트 걸기
+      console.log(e);
+      const $msg = document.querySelector('.msg');
+
+      if (e.shiftKey) {  //쉬프트키를 누르는 조건
+        $msg.textContent = `x: ${e.x}, y: ${e.y}`;  //쉬프트키 누르고 클릭스 좌표값 출력
+      } else {
+        $msg.textContent = '';  //쉬프트키를 누르지않고 클릭하면 아무것도 출력하지않음
+      } });
+
+    const $txtInput = document.getElementById('txt');
+
+    $txtInput.addEventListener('keyup', (e) => {  //키보드이벤트 keyup
+      console.log(e);
+      e.stopPropagation();
+    
+      const $show = document.querySelector('.show');
+      if (e.key === 'Enter') {  //엔터를 눌러야 화면에 표시
+        $show.textContent = $txtInput.value;
+        $txtInput.value = '';  //엔터를 쳤을때 기존 내용 input칸에서 삭제
+      } });
+
+document.getElementById('myButton').addEventListener('click', function(event) {
+console.log(event.target); // 이벤트가 발생한 버튼 요소를 반환
+});
+
+  </script>
+</body>
+</html>
