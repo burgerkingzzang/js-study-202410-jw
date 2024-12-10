@@ -17,6 +17,7 @@ console.log(false === 'false'); //false
 console.log(false === 0); //false
 
 
+
 console.log('=========================');
 
 //문자 비교
