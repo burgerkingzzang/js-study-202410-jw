@@ -11,10 +11,12 @@ console.log(10 * 3);
 
 // alert('야호');
 let userName = prompt('당신의 이름은 무엇입니까')
+//propt로 입력받은 값이 userName에 저장됨
 alert(`당신의 이름은 ${userName} 이군요`)
 
 
 let num1 = +prompt('좋아하는 첫숫자를 입력하세요!'); 
 let num2 = +prompt('좋아하는 두숫자를 입력하세요!');
-alert(`당신이 좋아하는 숫자의 합은 ${num1 + num2} `);
-//문자 앞에 + 를 붙이면 문자열인 숫자형태를  양수형태로 변환해준다
+alert(`당신이 좋아하는 숫자의 합은 ${Number(num1) + Number(num2)} `);
+// 1. prompt 앞에 + 를 붙이면 문자열인 숫자형태를  양수형태로 변환해준다
+// 2. 데이터 타입을 Number()함수를 사용해서 명시적으로 변환해준다.
