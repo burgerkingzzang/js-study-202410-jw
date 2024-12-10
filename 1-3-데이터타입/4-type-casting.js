@@ -33,3 +33,5 @@ console.log(typeof '안녕');       // 'string'
 console.log(typeof true);        // 'boolean'
 console.log(typeof undefined);   // 'undefined'
 console.log(typeof null);        // 'object' (자바스크립트의 설계상 오류)
+
+
