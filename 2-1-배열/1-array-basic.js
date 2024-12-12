@@ -35,7 +35,7 @@ for (let i = 0; i < weekDays.length; i++) {     // 순회문의 일부에 적용
   }
 }
 
-// 배열 변수 이름 관례 : 복수형, -List 어미
+// 배열 변수 이름 관례 : 복수형, -List 어미, Array 사용
 let hobbies = ["스키", "요리"];
 let hobbyList = ["스키", "요리"];
 let hobbyArray;

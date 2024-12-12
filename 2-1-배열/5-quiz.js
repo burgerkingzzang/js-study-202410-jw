@@ -1,20 +1,4 @@
-let arrayList = ["유노윤호", "최강창민", "영웅재중", "믹키유천", "시아준수"];
 
-while(true){
-  let number = prompt(`수정할 멤버 이름을 입력하세요 [${arrayList}]`);
- 
-  
-  if (arrayList.includes(number)) {
-    let newMember = prompt(`새로운 이름을 입력하세요!`);
-    
-    let index = arrayList.indexOf(number);
-    arrayList.splice(index, 1, newMember);
-  alert(`수정완료`);
-  break;
-  } else {
-  alert(`${number}은 잘못된 이름입니다.`);
-}
-}
 
 /*
 - Quiz. 
@@ -28,3 +12,32 @@ while(true){
    다시 수정할 이름을 입력할 수 있도록 하세요.
 4. 한 명의 멤버를 정확하게 수정할때까지 프로그램은 계속되어야 합니다.
 */
+
+
+
+let tvxqs = ["유노윤호", "최강창민", "영웅재중", "믹키유천", "시아준수"];
+while (tvxqs) {
+  if (tvxqs.length===0) {
+    break;
+  }
+let target = prompt(`현재 멤버 : ${tvxqs}\n 삭제할 이름을 입력하세요.`);
+
+//입력한 이름이 배열안에 있는가
+if (tvxqs.includes(target)) {0
+  //삭제 타겟의 인덱스 찾기
+  let index = tvxqs.indexOf(target);
+  //삭제 진행
+  tvxqs.splice(index, 1);
+  alert(`삭제 완료!\n 남은 멤버 [${tvxqs}]`)
+} else {
+  alert(`${target}은 잘못된 이름입니다.\n 다시 입력하세요.`)
+}
+}
+
+alert(`모든 멤버가 삭제되었습니다.`);
+
+
+
+
+
+
