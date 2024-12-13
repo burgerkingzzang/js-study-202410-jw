@@ -10,7 +10,7 @@ function callYourName(name) {
   var prohibits = ["바보", "멍충이", "메롱"]; //prohibits에 3가지 배열 지정
   if (prohibits.includes(name)) {
     // prohibits 배열에 있는 이름에 name이름과 같은 배열이 포함되어 있으면
-    console.log("그런 이름은 불러줄 수가 없단다 얘야"); // 그런 이름은 불러줄 수가 없단다 얘야를 출력
+    console.log("그런 이름은 불러줄 수가 없단다 얘야");
     return; // break와 같이 return으로 강제종료를 해준다.
   }
   console.log(`${name}님 안녕하세요`);
@@ -50,11 +50,11 @@ function operate(n1, n2) {  //리턴은 하나의 값만 변환 가능하므로 
   let subResult = n1 - n2;
   let multiResult = n1 * n2;
   let divResult = n1 / n2;
-  let resultList = { //함수안에 배열 만들어서 해결
-    addResult,  //key
-    subResult,
-    multiResult,
-    divResult,
+  let resultList = { //함수안에 배열이나 객체를 만들어서 해결
+    addResult: subResult,  //key
+    subResult: subResult,
+    multiResult: multiResult,
+    divResult: divResult,
   };
   return resultList;  //리턴은 언제나 하나의 값만 반환 가능! ex) f(x) = 2a + 3b
 }

@@ -23,7 +23,7 @@ if(true){
 }console.log(n);  //end outer if
 
 
-//지역 스코프 (local scope)
+//지역 스코프 (local scope) : 함수 내에서 변수가 생성되고 소멸
 function foo() {
   let x = '홍길동';
   console.log(`local x : ${x}`);  //local x : 홍길동

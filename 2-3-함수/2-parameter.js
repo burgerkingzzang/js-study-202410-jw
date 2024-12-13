@@ -36,7 +36,7 @@ console.log('=========================');
 function makeRandomInteger(x, y){
   let rn = Math.floor(Math.random() * (y -x + 1)) + x
   console.log(`랜덤정수: ${rn}`);
-  return rn;  //함수 안의 변수를 밖으로 꺼내올때는 return 사용
+  return rn;  //함수 안의 변수는 함수 안에서만 유효하기 때문에 변수를 밖으로 꺼내올때는 return 사용
 }
 //호출
 makeRandomInteger(1, 1000);  //랜덤정수y에서 x사이의 랜덤정수 출력
