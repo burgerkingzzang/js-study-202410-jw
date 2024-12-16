@@ -16,6 +16,7 @@ const add = function (n1, n2) {  //함수의 이름이 없어서 변수에 삽�
 
 const r1 = add(10, 20);  
 console.log(`r1: ${r1}`);  //r1: 30  /  변수의 이름으로 함수 호출 가능
+console.log(typeof add);   //function
 
 console.log('================');
 
@@ -30,7 +31,7 @@ const arr = [
   true,
   [1, 2, 3],
   { age: 3, name: '영희' },
-  function () {   // 배열 안에 함수 삽입 가능
+  function () {   // 배열 안에 함수 삽입 가능  //sleep이라는 key안에 있는 함수이므로 함수이름이 필요없음
     console.log('배열안의 함수!');
   }
 ];

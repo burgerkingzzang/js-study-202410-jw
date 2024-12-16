@@ -19,7 +19,7 @@ function makeCook(recipeName, recipeFunction) {  //요리이름 전달후 레시
 makeCook('대파청양고추라면', function () {  //recipeFunction으로 진입되는 함수  /콜백함수
   console.log('step1: 물을 끼리라~');
   console.log('step2: 면 스프 투하');
-  console.log('step3: 대파 송송탁 청양고추 파지직ㄱ!');
+  console.log('step3: 대파 송송탁 청양고추 파지직!');
   let side = '계란';
   if (side) {
     console.log(`step4: 계란도 넣어!`);
@@ -35,22 +35,14 @@ makeCook('BLT샌드위치', function () {
   console.log('step5: 비닐포장하기');
 });
 
-/*#### 나만의 맛도리 레시피 ####
-!!! 요리 이름: 대파청양고추라면
-step1: 물을 끼리라~
-step2: 면 스프 투하
-step3: 대파 송송탁 청양고추 파지직ㄱ!
-step4: 계란도 넣어!
-~~~ 참 쉽죠? 여러분도 따라해보세요!! ~~~
-=======================================
-#### 나만의 맛도리 레시피 ####
-!!! 요리 이름: BLT샌드위치
-step1: 베이컨 굽기
-step2: 상추 썰기
-step3: 참치 다지기
-step3: 참치 다지기
-step3: 참치 다지기
-step4: 빵 자르기
-step5: 비닐포장하기
-~~~ 참 쉽죠? 여러분도 따라해보세요!! ~~~
-======================================= */
+
+
+
+
+
+
+
+
+
+
+
