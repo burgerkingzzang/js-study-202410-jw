@@ -40,7 +40,7 @@ const userList = [
 const numbers = [1, 2, 3, 4, 5, 6];
 const foods = ['제육볶음', '김치찌개', '육개장', '파스타', '된장찌개'];
 
-for (const n of numbers) {  //index가 제어가 안됨
+for (const n of numbers) {  //for of 문은 index가 제어가 안됨
   console.log(n);
 }
 
@@ -51,7 +51,7 @@ for (let i = 0; i < numbers.length; i++) {  //index를 제어할수 있으나 �
 }
 console.log('=====================');
 
-forEach(): 배열의 반복문을 처리  //i for문의 장점과 for of 문의 장점을 결합 심플하면서 index제어 가능
+//forEach(): 배열의 반복문을 처리  //i for문의 장점과 for of 문의 장점을 결합 심플하면서 index제어 가능
 numbers.forEach(function (n, i, arr) {
   console.log(`n: ${n}`);  
   console.log(`i: ${i}`);  
@@ -63,11 +63,11 @@ for (const food of foods) {
   console.log(food + ' 존마탱!!');
 }
 
-foods.forEach((food, idx) => {
+foods.forEach((food, idx) => {  //배열을 먼저 작성후foreach 소괄호에 저장할 변수
   console.log(`${food} 존마탱! index: ${idx}`);
 });
 
-function forEach(callbackFn) {
+function forEach(callbackFn) {  //foreach문 상세하게 분석했을경우
   for (let i = 0; i < foods.length; i++) {
     callbackFn(foods[i], i);
   }

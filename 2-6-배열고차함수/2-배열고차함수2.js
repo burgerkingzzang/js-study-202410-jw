@@ -14,6 +14,7 @@ const mappedArray = nums  //타겟 -> nums
   .forEach(n => total += n)  //매핑한 데이터를 반복
   ;
 
+  
 console.log(total);  //360출력
 
 
